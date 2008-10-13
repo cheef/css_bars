@@ -9,11 +9,19 @@ copy stylesheet folder to your Rails public folder
 Using
 ===============
 You can choose a kind of including stylesheet:
-horisontal_bar data, :head       => send stylesheet to you yield(:head)
-horisontal_bar data              => insert css into template
+1) without special helper in header in layout
+ horisontal_bar data, :head       => send stylesheet to you yield(:head) once
 
-Variable "data" must be an array of arrays, like [["A", 50], ["B", 40]], where A - label and 50 - percent
-label may be any string, but percent must be an integer in range 0..100
+2) with special helper
+<html>
+...
+<head>
+  <%= css_bars_include_tag %>
+</head>
+<%= horisontal_bar data %>
+
+Variable "data" must be an array of arrays, like [["A", 50], ["B", 40]], where A - label and 50 - percent.
+Label may be any string, but percent must be an integer in range 0..100
 
 Examples
 ===============
