@@ -1,17 +1,5 @@
 css_bars
 ===============
-<<<<<<< HEAD:README
-Rails helper, provides simple colorfull horizontal css bar.
-
-Installation 
-===============
-copy stylesheet folder to your Rails public folder
-
-Using
-===============
-You can choose a kind of including stylesheet:
-1) without special helper in header in layout
-=======
 Rails helper, provides colorfull horizontal css bar with smart color generation system.
 
 Installation 
@@ -23,18 +11,11 @@ Stylesheet
 ===============
 You can choose a kind of including stylesheet:
 1) without special helper in layout header
->>>>>>> dev:README
  horisontal_bar data, :head       => send stylesheet to you yield(:head) once
 
 2) with special helper
 <html>
 ...
-<<<<<<< HEAD:README
-<head>
-  <%= css_bars_include_tag %>
-</head>
-<%= horisontal_bar data %>
-=======
   <head><%= css_bars_include_tag %></head>
   <body>
     <%= horisontal_bar data %>
@@ -68,7 +49,6 @@ You must setup two variables:
 Data
 ===============
 "horisontal_bar data"
->>>>>>> dev:README
 
 Variable "data" must be an array of arrays, like [["A", 50], ["B", 40]], where A - label and 50 - percent.
 Label may be any string, but percent must be an integer in range 0..100
@@ -77,18 +57,11 @@ Examples
 ===============
 horisontal_bar [["First bar", 50], ["Second bar", 50]], :head
 
-<<<<<<< HEAD:README
-Notes && TODOS
-===============
-- You can't change the colors
-- There only horisontal bar
-=======
 horisontal_bar [["First bar", 20], ["Second bar", 70]], :head, :color_generator
 
 Notes && TODOS
 ===============
 - There only horisontal bar
 - No rspec tests
->>>>>>> dev:README
 
 Copyright (c) 2008 Ivan Garmatenko <cheef.che@gmail.com>, released under the MIT license
