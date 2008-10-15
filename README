@@ -1,5 +1,6 @@
 css_bars
 ===============
+<<<<<<< HEAD:README
 Rails helper, provides simple colorfull horizontal css bar.
 
 Installation 
@@ -10,15 +11,64 @@ Using
 ===============
 You can choose a kind of including stylesheet:
 1) without special helper in header in layout
+=======
+Rails helper, provides colorfull horizontal css bar with smart color generation system.
+
+Installation 
+===============
+rake css_bars:install
+(it's copy stylesheet and config file)
+
+Stylesheet
+===============
+You can choose a kind of including stylesheet:
+1) without special helper in layout header
+>>>>>>> dev:README
  horisontal_bar data, :head       => send stylesheet to you yield(:head) once
 
 2) with special helper
 <html>
 ...
+<<<<<<< HEAD:README
 <head>
   <%= css_bars_include_tag %>
 </head>
 <%= horisontal_bar data %>
+=======
+  <head><%= css_bars_include_tag %></head>
+  <body>
+    <%= horisontal_bar data %>
+..
+
+Color system
+===============
+There are two colors modes:
+1) colors choosing by scheme
+2) colors range is generating in choosen range
+
+In your "rails_root/config/initializers/css_bars_config.rb" file you can setup default values and default color system.
+
+Scheme mode
+===============
+You must setup variable Che::CssBars.css_bars_options[:default_color_scheme] of color array, and use like this:
+
+horisontal_bar [["First bar", 30], ["Second bar", 50]], :head, :color_scheme
+Color array size equal color steps:
+  size 2 equal 2 colored bar
+  size 10 equal 10 colored bar
+
+Generator mode
+===============
+You must setup two variables:
+ Che::CssBars.css_bars_options[:default_generator_colors] - color borders
+ Che::CssBars.css_bars_options[:default_generator_points] - steps
+
+10 steps equal 10 colored bar
+
+Data
+===============
+"horisontal_bar data"
+>>>>>>> dev:README
 
 Variable "data" must be an array of arrays, like [["A", 50], ["B", 40]], where A - label and 50 - percent.
 Label may be any string, but percent must be an integer in range 0..100
@@ -27,9 +77,18 @@ Examples
 ===============
 horisontal_bar [["First bar", 50], ["Second bar", 50]], :head
 
+<<<<<<< HEAD:README
 Notes && TODOS
 ===============
 - You can't change the colors
 - There only horisontal bar
+=======
+horisontal_bar [["First bar", 20], ["Second bar", 70]], :head, :color_generator
+
+Notes && TODOS
+===============
+- There only horisontal bar
+- No rspec tests
+>>>>>>> dev:README
 
 Copyright (c) 2008 Ivan Garmatenko <cheef.che@gmail.com>, released under the MIT license
