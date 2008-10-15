@@ -4,8 +4,8 @@ Rails helper, provides colorfull horizontal css bar with smart color generation 
 
 Installation 
 ===============
-1) copy stylesheet folder to your Rails public folder
-2) copy plugin configuration file ("initializers/css_bars_config.rb") to your intitializer folder like "rails_root/config/initializers"
+rake css_bars:install
+(it's copy stylesheet and config file)
 
 Stylesheet
 ===============
